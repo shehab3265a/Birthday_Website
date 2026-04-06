@@ -1,0 +1,115 @@
+/* الإعدادات العامة للجسم (Body) ليكون متجاوباً مع Redmi Note 11 */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    /* خلفية متدرجة الألوان */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden; /* لمنع التمرير وضمان بقاء المحتوى في المنتصف */
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* بطاقة عيد الميلاد (الخلفية الشفافة) */
+.birthday-card {
+    width: 85%;
+    max-width: 400px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px 20px;
+    border-radius: 25px;
+    backdrop-filter: blur(15px); /* تأثير الزجاج المغبش */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* تصميم الزر */
+button {
+    padding: 18px 35px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: #ffffff;
+    color: #e73c7e;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+button:active {
+    transform: scale(0.95); /* تأثير الضغط على الهاتف */
+}
+
+.hidden { display: none; }
+
+/* صورة بوسي الشخصية */
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid white;
+    margin-bottom: 20px;
+    animation: popIn 0.8s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+/* النص الإنجليزي (Happy Birthday) */
+.birthday-text {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+/* رسالة التهنئة العربية */
+.arabic-message {
+    direction: rtl; 
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 15px;
+    font-weight: bold; /* جعل الخط العربي أوضح */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    animation: fadeInText 2s ease-in;
+}
+
+/* الأنيميشن */
+@keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* تعديلات خاصة للهواتف والشاشات الصغيرة (مثل Redmi Note 11) */
+@media (max-width: 480px) {
+    .birthday-text {
+        font-size: 1.5rem;
+    }
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+    .arabic-message {
+        font-size: 1rem;
+        padding: 0 5px;
+    }
+    .birthday-card {
+        padding: 20px 15px;
+    }
+}
