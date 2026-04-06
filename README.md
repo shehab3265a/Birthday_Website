@@ -1,2 +1,2 @@
 # Birthday_Website
-Happy_Birthday -> message to any one you need to surprise him
+Happy_Birthday -> message to anyone you need to surprise him
